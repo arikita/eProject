@@ -1,2 +1,1 @@
-# eProject
-Welcome to eProject Sem 4 from FPT Aptech
+Update test for arikita branch
