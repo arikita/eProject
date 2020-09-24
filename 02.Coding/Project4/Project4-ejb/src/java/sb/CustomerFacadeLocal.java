@@ -11,7 +11,7 @@ import javax.ejb.Local;
 
 /**
  *
- * @author VĂN BÌNH
+ * @author Windows 18
  */
 @Local
 public interface CustomerFacadeLocal {

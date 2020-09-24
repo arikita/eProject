@@ -149,22 +149,4 @@
         <put-attribute name="body" value="/WEB-INF/membership/detail.jsp" />  
     </definition>    
     <!--End Membership-->
-    <!--Salary-->
-    <definition name="salary/viewall.jsp" extends="base.definition.admin2">  
-        <put-attribute name="title" value="Contact Manager" />  
-        <put-attribute name="body" value="/WEB-INF/salary/viewall.jsp" />  
-    </definition>  
-   <definition name="salary/create.jsp" extends="base.definition.admin2">  
-        <put-attribute name="title" value="Contact Manager" />  
-        <put-attribute name="body" value="/WEB-INF/salary/create.jsp" />  
-    </definition>  
-    <definition name="salary/edit.jsp" extends="base.definition.admin2">  
-        <put-attribute name="title" value="Contact Manager" />  
-        <put-attribute name="body" value="/WEB-INF/salary/edit.jsp" />  
-    </definition>
-    <definition name="salary/detail.jsp" extends="base.definition.admin2">  
-        <put-attribute name="title" value="Contact Manager" />  
-        <put-attribute name="body" value="/WEB-INF/salary/detail.jsp" />  
-    </definition>    
-    <!--End Salary-->
 </tiles-definitions>

@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author VĂN BÌNH
+ * @author Windows 18
  */
 @Stateless
 public class WardsFacade extends AbstractFacade<Wards> implements WardsFacadeLocal {

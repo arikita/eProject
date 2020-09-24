@@ -1,19 +1,16 @@
 package entity;
 
 import entity.TblDiscount;
-import entity.TblProductColor;
 import java.math.BigDecimal;
 import javax.annotation.Generated;
-import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2020-09-24T14:31:15")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2020-09-21T17:56:55")
 @StaticMetamodel(TblProduct.class)
 public class TblProduct_ { 
 
     public static volatile SingularAttribute<TblProduct, String> productStyle;
-    public static volatile CollectionAttribute<TblProduct, TblProductColor> tblProductColorCollection;
     public static volatile SingularAttribute<TblProduct, String> productCode;
     public static volatile SingularAttribute<TblProduct, Integer> productId;
     public static volatile SingularAttribute<TblProduct, String> productSeason;
