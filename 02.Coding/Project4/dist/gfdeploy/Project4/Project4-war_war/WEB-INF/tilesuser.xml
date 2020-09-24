@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">  
+<tiles-definitions>  
+    <definition name="base.definition.user"  
+                template="/WEB-INF/layoutuser/layout.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="load" value="/WEB-INF/layoutadmins/load.jsp" />
+        <put-attribute name="body" value="" />  
+        <!--<put-attribute name="header" value="/WEB-INF/layoutuser/header.jsp" />--> 
+        <put-attribute name="footer" value="/WEB-INF/layoutuser/footer.jsp" /> 
+    </definition>  
+    
+    <definition name="layoutuser/hello.jsp" extends="base.definition.user">  
+        <put-attribute name="title" value="Contact Manager" />  
+        <put-attribute name="body" value="/WEB-INF/login/hello.jsp" />  
+    </definition> 
+    
+    <definition name="login/login.jsp" extends="base.definition.user">  
+        <put-attribute name="title" value="Contact Manager" />  
+        <put-attribute name="body" value="/WEB-INF/login/login.jsp" />  
+    </definition> 
+     <definition name="login/resetpassword.jsp" extends="base.definition.user">  
+        <put-attribute name="title" value="Contact Manager" />  
+        <put-attribute name="body" value="/WEB-INF/login/resetpassword.jsp" />  
+    </definition>
+    <definition name="book/viewtest" extends="base.definition.user">  
+        <put-attribute name="title" value="Contact Manager" />  
+        <put-attribute name="body" value="/WEB-INF/book/viewtest.jsp" />  
+    </definition>
+     <definition name="refresh" extends="base.definition.user">  
+        <put-attribute name="title" value="Contact Manager" />  
+        <put-attribute name="body" value=""/>  
+    </definition>
+    
+    
+</tiles-definitions>  
