@@ -50,7 +50,7 @@
             <div class="col-sm-9">
                 <h4 class="page-title"><fmt:message bundle="${lang}" key="salaryTable"/></h4>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Membership</a></li>
+                    <li class="breadcrumb-item"><a href="#">Salary</a></li>
                 </ol>
             </div>
 
@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="">
-                    <div class=""><i class="fa fa-table"></i> Data Membership</div>
+                    <div class=""><i class="fa fa-table"></i> Data Salary</div>
                     <div class="icon-container" style="width: 20%"><span class="ti-pencil-alt" style="padding-top: 10px"></span><span class="icon-name"> <a href="<%= request.getContextPath()%>/file/salary/createsalary" class="btn btn-info btn-round btn-block waves-effect waves-light m-1 btn-outline-success"><fmt:message bundle="${lang}" key="create"/></a></span></div>
                     <div class="">
 
@@ -78,6 +78,7 @@
                                         <th>salaryOtherDetail</th>
                                         <th>salaryReduce</th>
                                         <th>salaryReduceDetail</th>
+                                        <th>Sum</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -95,6 +96,7 @@
                                             <td>${b.salaryOtherDetail}</td>
                                             <td>${b.salaryReduce}</td>
                                             <td>${b.salaryReduceDetail}</td>
+                                            <td></td>
                                             <td >
                                                 <a href="<%= request.getContextPath()%>/file/salary/detail/${b.salaryId}" style="salary: lightseagreen"  ><span class="ti-zoom-in" ></span> <fmt:message bundle="${lang}" key="detail"/></a>
                                                 <a href="<%= request.getContextPath()%>/file/salary/editsalary/${b.salaryId}" style="color: lawngreen"><span class="ti-check-box" ></span> <fmt:message bundle="${lang}" key="edit"/></a>
@@ -126,9 +128,17 @@
                                 <tfoot>
                                     <tr style="text-align: center">
                                         <th>STT</th>
-                                        <th>Detail</th>
-                                        <th>Total</th>
-                                        <th>PercentOut</th>                                        
+                                        <th>salaryWorkingDay</th>
+                                        <th>salaryOvertime</th>
+                                        <th>salaryDayOff</th>                                        
+                                        <th>salaryHoliday</th>
+                                        <th>salaryAllowance</th>
+                                        <th>salaryBonus</th>
+                                        <th>salaryOther</th>
+                                        <th>salaryOtherDetail</th>
+                                        <th>salaryReduce</th>
+                                        <th>salaryReduceDetail</th>
+                                        <th>Sum</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
