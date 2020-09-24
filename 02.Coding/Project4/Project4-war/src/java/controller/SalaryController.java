@@ -30,7 +30,7 @@ public class SalaryController {
         mm.put("homepage", "salary");
         return "salary/viewall.jsp";
     }
-
+    
     private TblSalaryFacadeLocal lookupTblSalaryFacadeLocal() {
         try {
             Context c = new InitialContext();

@@ -96,7 +96,9 @@
                                             <td>${b.salaryOtherDetail}</td>
                                             <td>${b.salaryReduce}</td>
                                             <td>${b.salaryReduceDetail}</td>
-                                            <td></td>
+                                            <td>
+                                                ${(b.salaryWorkingDay+b.salaryOvertime-b.salaryDayOff+b.salaryHoliday*3/8)*50000+b.salaryBonus+b.salaryOther-b.salaryReduce}
+                                            </td>
                                             <td >
                                                 <a href="<%= request.getContextPath()%>/file/salary/detail/${b.salaryId}" style="salary: lightseagreen"  ><span class="ti-zoom-in" ></span> <fmt:message bundle="${lang}" key="detail"/></a>
                                                 <a href="<%= request.getContextPath()%>/file/salary/editsalary/${b.salaryId}" style="color: lawngreen"><span class="ti-check-box" ></span> <fmt:message bundle="${lang}" key="edit"/></a>
