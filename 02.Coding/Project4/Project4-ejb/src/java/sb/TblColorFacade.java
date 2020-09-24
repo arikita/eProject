@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Windows 18
+ * @author VĂN BÌNH
  */
 @Stateless
 public class TblColorFacade extends AbstractFacade<TblColor> implements TblColorFacadeLocal {

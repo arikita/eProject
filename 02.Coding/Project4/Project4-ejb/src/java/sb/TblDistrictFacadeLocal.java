@@ -11,7 +11,7 @@ import javax.ejb.Local;
 
 /**
  *
- * @author Windows 18
+ * @author VĂN BÌNH
  */
 @Local
 public interface TblDistrictFacadeLocal {

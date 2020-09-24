@@ -94,6 +94,12 @@
                     <p>Membership</p>
                 </a>
             </li>
+            <li <c:if test="${homepage=='salary'}">class="active "</c:if>>
+                <a href="${links}/file/salary/viewall/">
+                    <i class="now-ui-icons design_app"></i>
+                    <p>Salary</p>
+                </a>
+            </li>
             <li <c:if test="${homepage=='book'}">class="active "</c:if>>
                 <a href="${links}/file/book/viewall/">
                     <i class="now-ui-icons design_app"></i>

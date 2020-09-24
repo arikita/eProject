@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 
 /**
  *
- * @author Windows 18
+ * @author VĂN BÌNH
  */
 public abstract class AbstractFacade<T> {
 

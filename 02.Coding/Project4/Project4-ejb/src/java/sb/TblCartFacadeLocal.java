@@ -11,7 +11,7 @@ import javax.ejb.Local;
 
 /**
  *
- * @author Windows 18
+ * @author VĂN BÌNH
  */
 @Local
 public interface TblCartFacadeLocal {
@@ -29,7 +29,5 @@ public interface TblCartFacadeLocal {
     List<TblCart> findRange(int[] range);
 
     int count();
-
-    void addCart(TblCart item);
     
 }

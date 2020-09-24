@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Windows 18
+ * @author VĂN BÌNH
  */
 @Stateless
 public class TblRevenueFacade extends AbstractFacade<TblRevenue> implements TblRevenueFacadeLocal {

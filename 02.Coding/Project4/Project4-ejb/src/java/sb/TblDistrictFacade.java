@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Windows 18
+ * @author VĂN BÌNH
  */
 @Stateless
 public class TblDistrictFacade extends AbstractFacade<TblDistrict> implements TblDistrictFacadeLocal {

@@ -7,10 +7,11 @@
             <file>file:/E:/hoc/SAM4/Project/Project4/Project4-war/src/java/controller/AdminController.java</file>
         </group>
         <group>
-            <file>file:/D:/Sam%204/eproject4/Project4/Project4-war/src/java/controller/SalaryController.java</file>
-            <file>file:/D:/Sam%204/eproject4/Project4/Project4-war/src/java/model/SalaryEntity.java</file>
-            <file>file:/D:/Sam%204/eproject4/Project4/Project4-war/web/WEB-INF/salary/viewall.jsp</file>
-            <file>file:/D:/Sam%204/eproject4/Project4/Project4-war/web/WEB-INF/product/viewall.jsp</file>
+            <file>file:/D:/Sam%204/Project4/Project4-war/src/java/model/SalaryEntity.java</file>
+            <file>file:/D:/Sam%204/Project4/Project4-war/src/java/controller/SalaryController.java</file>
+            <file>file:/D:/Sam%204/Project4/Project4-war/web/WEB-INF/salary/create.jsp</file>
+            <file>file:/D:/Sam%204/Project4/Project4-war/web/WEB-INF/salary/edit.jsp</file>
+            <file>file:/D:/Sam%204/Project4/Project4-war/web/WEB-INF/salary/viewall.jsp</file>
         </group>
     </open-files>
 </project-private>

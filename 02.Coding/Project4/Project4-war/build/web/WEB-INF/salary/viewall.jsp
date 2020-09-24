@@ -36,7 +36,7 @@
         background:  #000000 !important;
     }
     a.dropdown-item:hover {
-        background-membership: #6977c2 !important;
+        background-salary: #6977c2 !important;
 
     }
 
@@ -48,7 +48,7 @@
         <!-- Breadcrumb-->
         <div class="row pt-2 pb-2">
             <div class="col-sm-9">
-                <h4 class="page-title"><fmt:message bundle="${lang}" key="membershipTable"/></h4>
+                <h4 class="page-title"><fmt:message bundle="${lang}" key="salaryTable"/></h4>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Membership</a></li>
                 </ol>
@@ -60,7 +60,7 @@
             <div class="col-lg-12">
                 <div class="">
                     <div class=""><i class="fa fa-table"></i> Data Membership</div>
-                    <div class="icon-container" style="width: 20%"><span class="ti-pencil-alt" style="padding-top: 10px"></span><span class="icon-name"> <a href="<%= request.getContextPath()%>/file/membership/createmembership" class="btn btn-info btn-round btn-block waves-effect waves-light m-1 btn-outline-success"><fmt:message bundle="${lang}" key="create"/></a></span></div>
+                    <div class="icon-container" style="width: 20%"><span class="ti-pencil-alt" style="padding-top: 10px"></span><span class="icon-name"> <a href="<%= request.getContextPath()%>/file/salary/createsalary" class="btn btn-info btn-round btn-block waves-effect waves-light m-1 btn-outline-success"><fmt:message bundle="${lang}" key="create"/></a></span></div>
                     <div class="">
 
                         <div class="table-responsive">
@@ -70,45 +70,37 @@
                                         <th>STT</th>
                                         <th>salaryWorkingDay</th>
                                         <th>salaryOvertime</th>
-                                        <th>PercentOut</th>                                        
+                                        <th>salaryDayOff</th>                                        
+                                        <th>salaryHoliday</th>
+                                        <th>salaryAllowance</th>
+                                        <th>salaryBonus</th>
+                                        <th>salaryOther</th>                                        
+                                        <th>salaryOtherDetail</th>
+                                        <th>salaryReduce</th>                                        
+                                        <th>salaryReduceDetail</th>  
+                                        <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${memberships}" var="b">
+                                    <c:forEach items="${salarys}" var="b">
                                         <tr style="text-align: center">
-                                            <td>${b.membershipId}</td>
-                                            <td>${b.membershipDetail}</td>
-                                            <td>${b.membershipTotal}</td>
-
+                                            <td>${b.salaryId}</td>
+                                            <td>${b.salaryWorkingDay}</td>
+                                            <td>${b.salaryOvertime}</td>
+                                            <td>${b.salaryDayOff}</td>
+                                            <td>${b.salaryHoliday}</td>
+                                            <td>${b.salaryAllowance}</td>
+                                            <td>${b.salaryBonus}</td>
+                                            <td>${b.salaryOther}</td>
+                                            <td>${b.salaryOtherDetail}</td>
+                                            <td>${b.salaryReduce}</td>
+                                            <td>${b.salaryReduceDetail}</td>   
                                             <td>
-                                                <c:if test="${b.membershipTotal>=1000 && b.membershipTotal<=2000}">2%</c:if>
-                                                <c:if test="${b.membershipTotal>2000}">5%</c:if>                      
+                                                ${(b.salaryWorkingDay+b.salaryOvertime-b.salaryDayOff+(b.salaryHoliday*3))/8+5+b.salaryBonus+b.salaryOther-b.salaryReduce}$
                                             </td>
                                             <td >
-                                                <a href="<%= request.getContextPath()%>/file/membership/detail/${b.membershipId}" style="membership: lightseagreen"  ><span class="ti-zoom-in" ></span> <fmt:message bundle="${lang}" key="detail"/></a>
-                                                <a href="<%= request.getContextPath()%>/file/membership/editmembership/${b.membershipId}" style="color: lawngreen"><span class="ti-check-box" ></span> <fmt:message bundle="${lang}" key="edit"/></a>
-                                                <a href="#" style="color: red!important" data-toggle="modal" data-target="#modal-animation-${b.membershipId}" ><span class="ti-trash" ></span> <fmt:message bundle="${lang}" key="delete"/></a>
-                                                <div class="modal fade" id="modal-animation-${b.membershipId}">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content animated zoomInUp">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title"><fmt:message bundle="${lang}" key="deletedata"/> </h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p><fmt:message bundle="${lang}" key="areyousure"/></p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> <fmt:message bundle="${lang}" key="close"/></button>
-                                                                <a class="btn btn-success" href="<%= request.getContextPath()%>/file/membership/delete/${b.membershipId}"><i class="fa fa-check-square-o"></i> <fmt:message bundle="${lang}" key="delete"/></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
+                                                <a href="<%= request.getContextPath()%>/file/salary/editsalary/${b.salaryId}" style="color: lawngreen"><span class="ti-check-box" ></span> <fmt:message bundle="${lang}" key="edit"/></a>
                                             </td>
                                         </tr>
                                     </c:forEach>       
@@ -116,9 +108,17 @@
                                 <tfoot>
                                     <tr style="text-align: center">
                                         <th>STT</th>
-                                        <th>Detail</th>
+                                        <th>salaryWorkingDay</th>
+                                        <th>salaryOvertime</th>
+                                        <th>salaryDayOff</th>                                        
+                                        <th>salaryHoliday</th>
+                                        <th>salaryAllowance</th>
+                                        <th>salaryBonus</th>
+                                        <th>salaryOther</th>                                        
+                                        <th>salaryOtherDetail</th>
+                                        <th>salaryReduce</th>                                        
+                                        <th>salaryReduceDetail</th>
                                         <th>Total</th>
-                                        <th>PercentOut</th>                                        
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
