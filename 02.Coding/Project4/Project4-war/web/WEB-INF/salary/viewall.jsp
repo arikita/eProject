@@ -78,7 +78,7 @@
                                         <th>salaryOtherDetail</th>
                                         <th>salaryReduce</th>
                                         <th>salaryReduceDetail</th>
-                                        <th>Sum</th>
+                                        <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -97,32 +97,10 @@
                                             <td>${b.salaryReduce}</td>
                                             <td>${b.salaryReduceDetail}</td>
                                             <td>
-                                                ${(b.salaryWorkingDay+b.salaryOvertime-b.salaryDayOff+b.salaryHoliday*3/8)*50000+b.salaryBonus+b.salaryOther-b.salaryReduce}
+                                                ${((b.salaryWorkingDay+b.salaryOvertime-b.salaryDayOff+b.salaryHoliday*3)/8)*5+b.salaryBonus+b.salaryOther-b.salaryReduce}$
                                             </td>
-                                            <td >
-                                                <a href="<%= request.getContextPath()%>/file/salary/detail/${b.salaryId}" style="salary: lightseagreen"  ><span class="ti-zoom-in" ></span> <fmt:message bundle="${lang}" key="detail"/></a>
-                                                <a href="<%= request.getContextPath()%>/file/salary/editsalary/${b.salaryId}" style="color: lawngreen"><span class="ti-check-box" ></span> <fmt:message bundle="${lang}" key="edit"/></a>
-                                                <a href="#" style="color: red!important" data-toggle="modal" data-target="#modal-animation-${b.salaryId}" ><span class="ti-trash" ></span> <fmt:message bundle="${lang}" key="delete"/></a>
-                                                <div class="modal fade" id="modal-animation-${b.salaryId}">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content animated zoomInUp">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title"><fmt:message bundle="${lang}" key="deletedata"/> </h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <p><fmt:message bundle="${lang}" key="areyousure"/></p>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> <fmt:message bundle="${lang}" key="close"/></button>
-                                                                <a class="btn btn-success" href="<%= request.getContextPath()%>/file/salary/delete/${b.salaryId}"><i class="fa fa-check-square-o"></i> <fmt:message bundle="${lang}" key="delete"/></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
+                                            <td >                                              
+                                                <a href="<%= request.getContextPath()%>/file/salary/editsalary/${b.salaryId}" style="color: lawngreen"><span class="ti-check-box" ></span> <fmt:message bundle="${lang}" key="edit"/></a>                                                
                                             </td>
                                         </tr>
                                     </c:forEach>       
@@ -140,7 +118,7 @@
                                         <th>salaryOtherDetail</th>
                                         <th>salaryReduce</th>
                                         <th>salaryReduceDetail</th>
-                                        <th>Sum</th>
+                                        <th>Total</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -167,7 +145,7 @@
 
 
 <script>
-$(document).ready(function () {
+    $(document).ready(function () {
 
     //Default data table
     $('#default-datatable').DataTable();
@@ -204,10 +182,10 @@ $(document).ready(function () {
             "aLengthMenu": [[5, 10, 20, 50], [5, 10, 20, 50]],
             buttons: {
             buttons: [
-            {extend: 'copy', text: '<fmt:message bundle="${lang}" key="copy"/>', exportOptions: {columns: [ 0, 1, 2 , 3 ]}},
-            {extend: 'excel', text: '<fmt:message bundle="${lang}" key="excel"/>', exportOptions: {columns: [ 0, 1, 2 , 3 ]}, titletitle: 'Shoe export'},
-            {extend: 'pdf', text: '<fmt:message bundle="${lang}" key="pdf"/>', footer: true, exportOptions: {columns: [ 0, 1, 2 , 3]}, title: 'SHOE EXPORT', download: 'open'},
-            {extend: 'print', text: '<fmt:message bundle="${lang}" key="print"/>', exportOptions: {columns: [ 0, 1, 2 , 3]}, title: 'Shoe export'},
+            {extend: 'copy', text: '<fmt:message bundle="${lang}" key="copy"/>', exportOptions: {columns: [ 0, 1, 2, 3 ]}},
+            {extend: 'excel', text: '<fmt:message bundle="${lang}" key="excel"/>', exportOptions: {columns: [ 0, 1, 2, 3 ]}, titletitle: 'Shoe export'},
+            {extend: 'pdf', text: '<fmt:message bundle="${lang}" key="pdf"/>', footer: true, exportOptions: {columns: [ 0, 1, 2, 3]}, title: 'SHOE EXPORT', download: 'open'},
+            {extend: 'print', text: '<fmt:message bundle="${lang}" key="print"/>', exportOptions: {columns: [ 0, 1, 2, 3]}, title: 'Shoe export'},
             {extend: 'colvis', text: '<fmt:message bundle="${lang}" key="columnvisibility"/>', columns: ':not(.noVis)'}
             ]
             }
